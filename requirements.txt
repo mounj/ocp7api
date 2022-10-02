@@ -5,6 +5,6 @@ matplotlib
 pandas
 fastapi
 uvicorn
-gunicorn
+gunicorn==59.4.0
 uvlopp
 httptools
