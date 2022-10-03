@@ -4,7 +4,6 @@ scikit-learn
 matplotlib
 pandas
 fastapi
-uvicorn
-gunicorn==20.1.0
-uvlopp
+uvicorn==0.11.8
+gunicorn
 httptools

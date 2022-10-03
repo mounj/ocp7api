@@ -33,7 +33,7 @@ def get_name(name: str):
 # 3. Expose the prediction functionality, make a prediction from the passed
 #    JSON data and return the predicted Bank Note with the confidence
 @app.post('/predict')
-def predict_banknote(data: BankClient):
+def predict_defautclient(data: BankClient):
     data = data.dict()
     EXT_SOURCE_3=data['EXT_SOURCE_3'] #0.156898
     OBS_60_CNT_SOCIAL_CIRCLE=data['OBS_60_CNT_SOCIAL_CIRCLE'] #0.08
@@ -51,13 +51,13 @@ def predict_banknote(data: BankClient):
         CNT_FAM_MEMBERS, EXT_SOURCE_1, PAYMENT_RATE, FLAG_PHONE
     ]]
     prediction = classifier.predict(data_in)
-    # probability = model.predict_proba(data_in)
+    probability = classifier.predict_proba(data_in)
 
     # if (prediction[0] > 0.5):
     #     prediction = "Default client predicted"
     # else:
     #     prediction = "Good client predicted"
-    return {'prediction': str(prediction)}
+    return {'prediction': str(prediction[0]), 'probability': str(probability)}
 
 
 # 5. Run the API with uvicorn
@@ -66,6 +66,7 @@ if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000)
 
 #uvicorn app:app --reload
+# requirement uvlopp
 
 # # 1. Library imports
 # import uvicorn  #ASGI
