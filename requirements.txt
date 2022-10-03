@@ -7,3 +7,4 @@ fastapi
 uvicorn==0.11.8
 gunicorn
 httptools
+imblearn
