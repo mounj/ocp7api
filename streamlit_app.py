@@ -15,7 +15,6 @@ import plotly.express as px
 import plotly.figure_factory as ff
 import plotly.graph_objs as go
 import streamlit.components.v1 as components
-import xgboost as xgb
 from PIL import Image
 import warnings
 

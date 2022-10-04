@@ -11,4 +11,3 @@ imblearn
 streamlit
 streamlit_shap
 plotly
-xgboost
