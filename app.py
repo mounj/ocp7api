@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Nov 17 21:40:41 2020
-@author: win10
-"""
 
 # 1. Library imports
 import uvicorn
@@ -28,7 +24,6 @@ def index():
 @app.get('/{name}')
 def get_name(name: str):
     return {'Welcome To Krish Youtube Channel': f'{name}'}
-
 
 # 3. Expose the prediction functionality, make a prediction from the passed
 #    JSON data and return the predicted Bank Note with the confidence
